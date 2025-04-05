@@ -6,14 +6,14 @@ public class CaeserCipher {
         System.out.print("Enter a string to encrypt: ");
         String str = sc.nextLine().toLowerCase(); // Convert input to lowercase
 
-        caesarCipher(str);
+        System.out.println("The ciphered text is: " + caesarCipher(str));
     }
     //Caeser cipher encrypts only alphabets from A-Z or a-z
     public static StringBuilder caesarCipher(String input) {
         StringBuilder cipheredText = new StringBuilder();
         for (int i = 0; i < input.length(); i++) {
             char ch = input.charAt(i);
-            //add any white space to the cipheredText (whitespaces do not get ciphered in Caeser cipher)
+            //add the whitespaces to the cipheredText (whitespaces do not get ciphered in Caeser cipher)
             if (ch == ' ') {
                 cipheredText.append(' ');
             }
