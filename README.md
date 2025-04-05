@@ -71,16 +71,16 @@ This repository contains implementations of various cryptographic algorithms wri
 
 ## Repository Structure
 
-├── CaesarCipher.java
-├── PlayfairCipher.java
-├── HillCipher.java
-├── AES.java
-├── DES.java
-├── RSA.java
-├── VigenereCipher.java
-├── SHA512.java
-├── MD5.java
-└── README.md
+- CaesarCipher.java
+- PlayfairCipher.java
+- HillCipher.java
+- AES.java
+- DES.java
+- RSA.java
+- VigenereCipher.java
+- SHA512.java
+- MD5.java
+- README.md
 
 
 Each `.java` file contains the implementation of the respective algorithm along with comments explaining its functionality.
