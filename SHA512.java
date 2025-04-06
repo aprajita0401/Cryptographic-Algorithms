@@ -6,7 +6,7 @@ public class SHA512 {
     public static int AND(int a, int b){
         return a & b;
     }
-    public static int AND(int f1, int f2){
+    public static int XOR(int f1, int f2){
         return (f1 & ~f2) | (~f1 & f2);
     }
     public static int calcBitPadding(int n){
