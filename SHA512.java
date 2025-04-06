@@ -3,28 +3,34 @@ public class SHA512 {
     public static String toBinary(int n){
         return Integer.toBinaryString(n);
     }
+    public static int AND(int a, int b){
+        return a & b;
+    }
+    public static int AND(int f1, int f2){
+        return (f1 & ~f2) | (~f1 & f2);
+    }
     public static int calcBitPadding(int n){
         int multiplier = 1;
         while(multiplier*1024<(n+128))
         {
             multiplier++;
         }
-        return (multiplier*1024)-(n+128);
+        return (multiplier * 1024) - (n + 128);
     }
     public static String countMaj(int A, int B, int C){
         //Majority(A,B,C) = (A AND B) XOR (B AND C) XOR (C AND A)
-        int a1 = A & B;
-        int b1 = B & C;
-        int c1 = C & A;
-        int maj1 = (a1 & ~b1) | (~a1 & b1);
-        int maj = (c1 & ~maj1) | (~c1 & maj1);
+        int a1 = AND(A, B);
+        int b1 = AND(B, C);
+        int c1 = AND(C, A);
+        int maj1 = XOR(a1, b1);
+        int maj = XOR(maj1, c1);
         return toBinary(maj);
     }
     public static String countCon(int E, int F, int G){
         //conditional(E,F,G) = (E AND F) XOR (~E AND G)
-        int a1 = E & F;
-        int b1 = ~E & G;
-        int con = (a1 & ~b1) | (~a1 & b1);
+        int a1 = AND(E, F);
+        int b1 = AND(~E, G);
+        int con = XOR(a1, b1);
         return toBinary(con);
     }
     public static void main(String[] args) {
