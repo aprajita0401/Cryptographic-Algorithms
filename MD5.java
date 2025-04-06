@@ -3,6 +3,12 @@ public class MD5 {
     public static String toBinary(int n){
         return Integer.toBinaryString(n);
     }
+    public static int AND(int a, int b){
+        return a & b;
+    }
+    public static int XOR(int f1, int f2){
+        return (f1 & ~f2) | (~f1 & f2);
+    }
     public static int calcBitPadding(int n){
         int multiplier = 1;
         while(multiplier * 512 < (n + 64))
@@ -14,20 +20,20 @@ public class MD5 {
 
     public static String G(int B, int C, int D){
         //G(B, C, D) = (B AND D) OR (C AND ~D)
-        int func = (B & D) | (C & ~D);
+        int func = AND(B, D) | AND(C, ~D);
         return toBinary(func);
     }
 
     public static String F(int B, int C, int D){
         //F(B, C, D) = (B AND C) OR (~B AND D)
-        int func = (B & C) | (~B & D);
+        int func = AND(B, C) | AND(~B, D);
         return toBinary(func);
     }
 
     public static String H(int B, int C, int D){
         //H(B, C, D) = B XOR C XOR D
-        int func = (B & ~C) | (~B & C);
-        int func1 = (func & ~D) | (~func & D);
+        int func = XOR(B, C);
+        int func1 = XOR(func, D);
         return toBinary(func1);
     }
 
