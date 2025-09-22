@@ -18,13 +18,6 @@ This repository contains implementations of various cryptographic algorithms wri
   - Generates the matrix based on a keyword.
   - Handles repeated letters and padding.
 
-### 3. Hill Cipher
-- **Description**: A polygraphic cipher based on linear algebra, using matrix multiplication to encrypt blocks of text.
-- **Use Cases**: Encryption of larger blocks of text.
-- **Features**:
-  - Supports variable-sized matrices.
-  - Requires an invertible key matrix.
-
 ### 4. AES (Advanced Encryption Standard)
 - **Description**: A symmetric encryption algorithm widely used for secure data transmission.
 - **Use Cases**: Securing sensitive data like passwords, files, and communications.
@@ -112,3 +105,4 @@ This project is licensed under the [MIT License](LICENSE).
 ---
 
 By using a single `README.md` file, you provide users with a comprehensive overview of your project while keeping it organized and easy to navigate. If you have additional documentation or examples for each algorithm, you can include them as separate markdown files linked from the main `README.md` file.
+
